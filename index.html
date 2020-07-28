@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+    <div></div>
+
+    <script>
+      document.addEventListener(
+        "click",
+        function(event) {
+          if (event.target.tagName.toLowerCase() === "a") {
+            var target = event.target.getAttribute("href");
+            if (target.startsWith("#")) {
+              window.location = "about:srcdoc" + target;
+              event.preventDefault();
+            }
+          }
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
